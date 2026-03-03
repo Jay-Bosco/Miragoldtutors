@@ -30,25 +30,23 @@ export default function CTABanner() {
 >
   Give Your Child the Confidence to<br />Succeed
 </h2>
-            <p
-              className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7] mx-auto md:mx-0"
-              style={{ maxWidth: "500px", marginBottom: "20px" }}
-            >
-              We combine structure, encouragement, and academic excellence to help every
-              child thrive in their entrance exams and beyond.
-            </p>
+           <p
+  className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7] mx-auto md:mx-0 text-left"
+  style={{ maxWidth: "500px", marginBottom: "20px" }}
+>
+  We combine structure, encouragement, and academic excellence to help every
+  child thrive in their entrance exams and beyond.
+</p>
             <div className="flex justify-center md:justify-start">
               <Button label="Book a free call now" href="/contact" variant="primary" />
             </div>
           </div>
 
-          {/* Image side */}
-          {/* Image side */}
 {/* Image side */}
 <div className="flex-1 flex justify-center md:justify-end w-full">
   <div
     className="relative md:-mr-10"
-    style={{ width: "min(80vw, 600px)", height: "min(70vw, 420px)" }}
+    style={{ width: "min(80vw, 600px)", height: "min(70vw, 500px)" }}
   >
     <Image
       src="/images/CTA-image.png"
