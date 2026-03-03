@@ -25,11 +25,11 @@ export default function CTABanner() {
           {/* Text side */}
           <div className="flex-1 text-center md:text-left">
             <h2
-              className="font-display text-[22px] sm:text-[28px] md:text-[32px] font-bold text-dark leading-[1.2]"
-              style={{ marginBottom: "12px" }}
-            >
-              Give Your Child the Confidence to<br className="hidden md:block" /> Succeed
-            </h2>
+  className="font-display text-[22px] sm:text-[28px] md:text-[32px] font-bold text-dark leading-[1.2] text-left"
+  style={{ marginBottom: "12px" }}
+>
+  Give Your Child the Confidence to<br />Succeed
+</h2>
             <p
               className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7] mx-auto md:mx-0"
               style={{ maxWidth: "500px", marginBottom: "20px" }}
@@ -44,10 +44,11 @@ export default function CTABanner() {
 
           {/* Image side */}
           {/* Image side */}
+{/* Image side */}
 <div className="flex-1 flex justify-center md:justify-end w-full">
   <div
     className="relative md:-mr-10"
-    style={{ width: "min(80vw, 600px)", height: "min(80vw, 600px)" }}
+    style={{ width: "min(80vw, 600px)", height: "min(70vw, 420px)" }}
   >
     <Image
       src="/images/CTA-image.png"
