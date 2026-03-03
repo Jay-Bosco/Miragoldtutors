@@ -65,7 +65,7 @@ export default function Testimonials() {
      
 
    <div>
-  <div style={{ width: "480px", height: "1px", backgroundColor: "#E0E0E0", marginBottom: "16px" }} />
+  <div style={{ width: "430px", height: "1px", backgroundColor: "#E0E0E0", marginBottom: "16px" }} />
   <p className="font-sans text-dark text-[14px] sm:text-[15px] font-semibold">{featured.author}</p>
   <p className="font-sans text-[#6B6B7B] text-[12px] sm:text-[13px]">{featured.role}</p>
 </div>
