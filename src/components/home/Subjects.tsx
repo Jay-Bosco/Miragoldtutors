@@ -20,7 +20,8 @@ export default function WhatWeTeach() {
   ];
 
   return (
-    <section style={{ backgroundColor: "#FEFCF4", width: "100%" }}>
+    <section id="subjects" style={{ backgroundColor: "#FEFCF4", width: "100%" }}>
+    
       <div
         style={{
           maxWidth: "1200px",

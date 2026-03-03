@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section style={{ width: "100%", backgroundColor: "#FEFCF4" }}>
+    <section id="why" style={{ width: "100%", backgroundColor: "#FEFCF4", scrollMarginTop: "80px" }}>
       <div
         style={{
           maxWidth: "1200px",

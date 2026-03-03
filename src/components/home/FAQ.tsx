@@ -24,7 +24,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section style={{ width: "100%", backgroundColor: "white" }}>
+    <section id="faqs" style={{ width: "100%", backgroundColor: "white", scrollMarginTop: "80px"  }}>
       <div
         style={{
           maxWidth: "750px",
