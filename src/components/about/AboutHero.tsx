@@ -53,17 +53,20 @@ export default function AboutHero() {
           </div>
 
           {/* Image side */}
-          <div className="flex-1 flex justify-end">
-            <div className="relative" style={{ width: "500px", height: "420px" }}>
-              <Image
-                src="/images/About-hero.png"
-                alt="Student smiling"
-                fill
-                className="object-contain"
-                sizes="500px"
-              />
-            </div>
-          </div>
+<div className="flex-1 flex justify-center md:justify-end w-full">
+  <div
+    className="relative w-full"
+    style={{ maxWidth: "500px", aspectRatio: "5/4" }}
+  >
+    <Image
+      src="/images/About-hero.png"
+      alt="Student smiling"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 100vw, 500px"
+    />
+  </div>
+</div>
         </div>
       </div>
     </section>

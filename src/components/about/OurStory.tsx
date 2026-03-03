@@ -14,65 +14,70 @@ export default function OurStory() {
         }}
       >
         <div className="flex flex-col md:flex-row gap-12 items-start">
-         {/* Images side */}
-<div className="flex-1 relative" style={{ minHeight: "500px" }}>
-  {/* Top image with yellow border */}
-  <div
-    className="relative overflow-hidden"
-    style={{
-      width: "240px",
-      height: "220px",
-      marginLeft: "40px",
-      border: "3px solid #F5C842",
-      borderRadius: "16px",
-    }}
-  >
-    <Image
-      src="/images/About-story1.png"
-      alt="Students learning"
-      fill
-      className="object-cover"
-      sizes="240px"
-    />
-  </div>
+    {/* Images side */}
+<div className="flex-1 flex justify-center md:justify-start">
+  <div className="relative min-h-[350px] md:min-h-[500px]">
+    {/* Scale wrapper for mobile */}
+    <div className="scale-[0.75] -translate-x-[12%] md:scale-100 md:translate-x-0 origin-top-left">
+      {/* Top image with yellow border */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          width: "240px",
+          height: "220px",
+          marginLeft: "40px",
+          border: "3px solid #F5C842",
+          borderRadius: "16px",
+        }}
+      >
+        <Image
+          src="/images/About-story1.png"
+          alt="Students learning"
+          fill
+          className="object-cover"
+          sizes="240px"
+        />
+      </div>
 
-  {/* 8+ badge - bridging both images */}
-  <div
-    className="relative bg-[#F5C842] rounded-2xl flex flex-col items-center justify-center"
-    style={{
-      width: "130px",
-      height: "120px",
-      marginTop: "-120px",
-      marginLeft: "180px",
-      zIndex: 10,
-      border: "5px solid white",
-    }}
-  >
-    <span className="font-display text-[32px] font-bold text-dark leading-none">8+</span>
-    <span className="font-sans text-[11px] text-dark/70 leading-tight text-center" style={{ marginTop: "4px" }}>
-      Years of experience
-    </span>
-  </div>
+      {/* 8+ badge - bridging both images */}
+      <div
+        className="relative bg-[#F5C842] rounded-2xl flex flex-col items-center justify-center"
+        style={{
+          width: "130px",
+          height: "120px",
+          marginTop: "-120px",
+          marginLeft: "180px",
+          zIndex: 10,
+          border: "5px solid white",
+        }}
+      >
+        <span className="font-display text-[32px] font-bold text-dark leading-none">8+</span>
+        <span className="font-sans text-[11px] text-dark/70 leading-tight text-center" style={{ marginTop: "4px" }}>
+          Years of experience
+        </span>
+      </div>
 
-  {/* Bottom image with yellow border */}
-  <div
-    className="relative overflow-hidden"
-    style={{
-      width: "240px",
-      height: "220px",
-      marginTop: "-120px",
-      marginLeft: "240px",
-      border: "3px solid #F5C842",
-      borderRadius: "16px",
-    }}
-  >
-    <Image
-      src="/images/About-story2.png"
-      alt="Students studying"
-      fill
-      className="object-cover"
-      sizes="240px"
-    />
+      {/* Bottom image with yellow border */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          width: "240px",
+          height: "220px",
+          marginTop: "-120px",
+          marginLeft: "240px",
+          border: "3px solid #F5C842",
+          borderRadius: "16px",
+        }}
+      >
+        <Image
+          src="/images/About-story2.png"
+          alt="Students studying"
+          fill
+          className="object-cover"
+          sizes="240px"
+        />
+      </div>
+    </div>
   </div>
 </div>
 
