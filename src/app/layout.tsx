@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body style={{ margin: 0, padding: 0, width: "100%", minHeight: "100vh" }}>
+    <html lang="en" style={{ overflowX: "hidden" }}>
+      <body style={{ margin: 0, padding: 0, width: "100%", minHeight: "100vh", overflowX: "hidden" }}>
         <Navbar />
-        <main style={{ width: "100%" }}>
+        <main style={{ width: "100%", overflowX: "hidden" }}>
           {children}
         </main>
         <Footer />

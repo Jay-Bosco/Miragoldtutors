@@ -22,7 +22,7 @@ export default function AboutHero() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          paddingLeft: "40px",
+          paddingLeft: "20px",
           paddingRight: "40px",
           paddingTop: "60px",
           paddingBottom: "60px",
