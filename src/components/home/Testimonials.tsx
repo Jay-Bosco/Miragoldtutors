@@ -34,8 +34,8 @@ export default function Testimonials() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          paddingLeft: "40px",
-          paddingRight: "40px",
+          paddingLeft: "24x",
+          paddingRight: "24px",
           paddingTop: "80px",
           paddingBottom: "40px",
         }}

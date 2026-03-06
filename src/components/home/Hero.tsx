@@ -25,8 +25,8 @@ export default function Hero() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          paddingLeft: "40px",
-          paddingRight: "40px",
+          paddingLeft: "24px",
+          paddingRight: "24px",
           paddingTop: "40px",
           paddingBottom: "20px",
           display: "flex",
@@ -52,7 +52,7 @@ export default function Hero() {
           <Button label="Learn more" href="/about" variant="secondary" />
         </div>
 
-        <div className="relative w-full max-w-[90%] sm:max-w-150 md:max-w-175 lg:max-w-[750px] mx-auto aspect-16/10">
+        <div className="relative w-full max-w-[100%] lg:max-w-[1100px] mx-auto" style={{ aspectRatio: "1099/521" }}>
 
           <img
             src="/images/background-blue.png"

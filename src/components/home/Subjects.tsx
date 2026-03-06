@@ -26,8 +26,8 @@ export default function WhatWeTeach() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          paddingLeft: "40px",
-          paddingRight: "40px",
+          paddingLeft: "24px",
+          paddingRight: "24px",
           paddingTop: "80px",
           paddingBottom: "80px",
           textAlign: "center",
