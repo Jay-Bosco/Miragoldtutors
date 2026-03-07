@@ -12,7 +12,7 @@ export default function Button({ label, href, variant = "primary", onClick }: Bu
 
   const variants = {
   primary: "bg-[#518CBE] text-white hover:bg-[#4578A8] hover:-translate-y-0.5 shadow-lg shadow-blue-500/30",
-  secondary: "bg-transparent text-[#518CBE] border border-[#518CBE] hover:bg-[#E8F2FC] hover:-translate-y-0.5",
+  secondary: "bg-transparent text-dark border border-dark hover:bg-gray-100 hover:-translate-y-0.5",
   gold: "bg-[#F5C842] text-[#1A1A2E] font-bold hover:-translate-y-0.5 shadow-lg shadow-yellow-400/40",
 };
 
@@ -27,7 +27,7 @@ export default function Button({ label, href, variant = "primary", onClick }: Bu
   }
 
   return (
-    <button onClick={onClick} className={classes} style={{ fontSize: "13px", padding: "10px 22px" }}>
+    <button onClick={onClick} className={classes} style={{ fontSize: "14px", padding: "12px 24px" }}>
       {label}
     </button>
   );

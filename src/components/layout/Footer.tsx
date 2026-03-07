@@ -4,16 +4,15 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer style={{ width: "100%", backgroundColor: "Black" }}>
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          paddingLeft: "40px",
-          paddingRight: "40px",
-          paddingTop: "48px",
-          paddingBottom: "24px",
-        }}
-      >
+     <div
+  className="section-padding"
+  style={{
+    maxWidth: "1440px",
+    margin: "0 auto",
+    paddingTop: "48px",
+    paddingBottom: "24px",
+  }}
+>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10" style={{ marginBottom: "40px" }}>
           {/* Logo + Social */}
           <div>
@@ -101,12 +100,13 @@ export default function Footer() {
             </ul>
           </div>
 
-        {/* Newsletter */}
-<div style={{ width: "fit-content" }}>
+        
+{/* Newsletter */}
+<div className="w-full md:w-fit">
   <h4 className="font-sans text-white text-[14px] font-semibold" style={{ marginBottom: "8px" }}>
     Newsletter
   </h4>
-  <p className="font-sans text-white/50 text-[12px] leading-[1.6] whitespace-nowrap" style={{ marginBottom: "16px" }}>
+  <p className="font-sans text-white/50 text-[12px] leading-[1.6] md:whitespace-nowrap" style={{ marginBottom: "16px" }}>
     Sign up to our newsletter to receive latest updates
   </p>
   <div className="flex flex-col gap-3">

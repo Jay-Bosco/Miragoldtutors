@@ -4,7 +4,6 @@ import Button from "@/components/ui/Button";
 export default function CTABanner() {
   return (
     <section className="relative" style={{ width: "100%", overflow: "hidden", backgroundColor: "white" }}>
-      {/* Background image */}
       <img
         src="/images/CTA-background.png"
         alt=""
@@ -13,50 +12,45 @@ export default function CTABanner() {
       />
 
       <div
-        className="relative z-10 px-6 sm:px-10"
+        className="relative z-10 section-padding"
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1440px",
           margin: "0 auto",
-          paddingTop: "60px",
+          paddingTop: "40px",
           paddingBottom: "0",
         }}
       >
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          {/* Text side */}
-          <div className="flex-1 text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-[127px]">
+          <div className="flex-1 text-left">
             <h2
-  className="font-display text-[22px] sm:text-[28px] md:text-[32px] font-bold text-dark leading-[1.2] text-left"
-  style={{ marginBottom: "12px" }}
->
-  Give Your Child the Confidence to<br />Succeed
-</h2>
-           <p
-  className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7] mx-auto md:mx-0 text-left"
-  style={{ maxWidth: "500px", marginBottom: "20px" }}
->
-  We combine structure, encouragement, and academic excellence to help every
-  child thrive in their entrance exams and beyond.
-</p>
-            <div className="flex justify-center md:justify-start">
+              className="font-display font-bold text-dark leading-[1.2]"
+              style={{ fontSize: "32px", marginBottom: "12px" }}
+            >
+              Give Your Child the Confidence to<br className="hidden md:block" /> Succeed
+            </h2>
+            <p
+              className="font-sans text-[#6B6B7B] leading-[1.7]"
+              style={{ fontSize: "16px", maxWidth: "500px", marginBottom: "20px" }}
+            >
+              We combine structure, encouragement, and academic excellence to help every
+              child thrive in their entrance exams and beyond.
+            </p>
+            <div className="flex justify-start">
               <Button label="Book a free call now" href="/contact" variant="primary" />
             </div>
           </div>
 
-{/* Image side */}
-<div className="flex-1 flex justify-center md:justify-end w-full">
-  <div
-    className="relative md:-mr-10"
-    style={{ width: "min(80vw, 600px)", height: "min(70vw, 500px)" }}
-  >
-    <Image
-      src="/images/CTA-image.png"
-      alt="Children studying together"
-      fill
-      className="object-contain"
-      sizes="(max-width: 768px) 80vw, 600px"
-    />
-  </div>
-</div>
+          <div className="flex-1 flex justify-center md:justify-end w-full">
+            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[551px] lg:h-[486px]">
+              <Image
+                src="/images/CTA-image.png"
+                alt="Children studying together"
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 551px"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

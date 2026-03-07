@@ -24,26 +24,27 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faqs" style={{ width: "100%", backgroundColor: "white", scrollMarginTop: "80px"  }}>
-      <div
-        style={{
-          maxWidth: "750px",
-          margin: "0 auto",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-          paddingTop: "60px",
-          paddingBottom: "80px",
-          textAlign: "center",
-        }}
-      >
-        <h2
-          className="font-display text-[24px] sm:text-[28px] md:text-[32px] font-bold text-dark leading-[1.2]"
-          style={{ marginBottom: "40px" }}
-        >
-          Frequently Asked Questions
-        </h2>
+  <section id="faqs" style={{ width: "100%", backgroundColor: "white", scrollMarginTop: "80px" }}>
+  <div className="section-padding"
+    style={{
+      maxWidth: "1440px",
+      margin: "0 auto",
+  
+      paddingTop: "60px",
+      paddingBottom: "60px",
+      textAlign: "center",
+    }}
+  >
+    <h2
+      className="font-display font-bold text-dark leading-[1.2]"
+      style={{ fontSize: "32px", marginBottom: "32px" }}
+    >
+      Frequently Asked Questions
+    </h2>
 
-        <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5" style={{ maxWidth: "792px", margin: "0 auto" }}>
+
+       
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (

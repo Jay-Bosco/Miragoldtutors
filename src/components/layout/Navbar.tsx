@@ -17,30 +17,29 @@ export default function Navbar() {
 
   return (
     <nav style={{ position: "sticky", top: 0, zIndex: 50, backgroundColor: "rgba(254, 252, 244, 0.85)", backdropFilter: "blur(8px)", width: "100%" }}>
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          paddingLeft: "40px",
-          paddingRight: "40px",
-          height: "68px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+     <div
+  className="section-padding"
+  style={{
+    maxWidth: "1440px",
+    margin: "0 auto",
+    height: "112px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
         
         {/* Logo */}
-        <Link href="/" style={{ flexShrink: 0 }}>
-          <Image
-            src="/images/Logo.png"
-            alt="Miragold Tutors"
-            width={100}
-            height={36}
-            className="object-contain w-auto h-[40px] sm:h-[48px] md:h-[52px]"
-            priority
-          />
-        </Link>
+       <Link href="/" style={{ flexShrink: 0 }}>
+  <Image
+    src="/images/Logo.png"
+    alt="Miragold Tutors"
+    width={85}
+    height={80}
+    className="object-contain"
+    priority
+  />
+</Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 list-none">
@@ -58,7 +57,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button label="Get Started" href="/about" variant="primary" />
+          <Button label="Book a free call now" href="/contact" variant="primary" />
         </div>
 
         {/* Mobile hamburger */}
@@ -74,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#FEF9E8] border-t border-black/5 flex flex-col gap-4" style={{ padding: "16px 40px" }}>
+        <div className="md:hidden bg-[#FEF9E8] border-t border-black/5 flex flex-col gap-4 section-padding" style={{ paddingTop: "16px", paddingBottom: "16px" }}>
           {links.map((link) => (
             <Link
               key={link.href}
@@ -85,7 +84,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button label="Get Started" href="/about" variant="primary" />
+          <Button label="Book a free call now" href="/contact" variant="primary" />
         </div>
       )}
     </nav>

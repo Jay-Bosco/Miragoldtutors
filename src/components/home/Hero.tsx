@@ -21,20 +21,18 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-75 sm:w-100 md:w-150 h-75 sm:h-100 md:h-150 rounded-full bg-[radial-gradient(ellipse,rgba(74,144,217,0.07)_0%,transparent_70%)] pointer-events-none" />
 
       <div
-        className="relative z-10"
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-          paddingTop: "40px",
-          paddingBottom: "20px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
+  className="relative z-10 section-padding"
+  style={{
+    maxWidth: "1440px",
+    margin: "0 auto",
+    paddingTop: "40px",
+    paddingBottom: "20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+  }}
+>
         <h1 className="font-display text-[28px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold text-dark leading-[1.2]" style={{ marginBottom: "16px" }}>
           Confident Children.
           <br />
