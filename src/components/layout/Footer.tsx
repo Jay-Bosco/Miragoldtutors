@@ -4,29 +4,30 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer style={{ width: "100%", backgroundColor: "Black" }}>
-     <div
-  className="section-padding"
-  style={{
-    maxWidth: "1440px",
-    margin: "0 auto",
-    paddingTop: "48px",
-    paddingBottom: "24px",
-  }}
->
+      <div
+        className="section-padding"
+        style={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          paddingTop: "48px",
+          paddingBottom: "24px",
+        }}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10" style={{ marginBottom: "40px" }}>
+
           {/* Logo + Social */}
           <div>
-           <Link href="/" className="inline-block" style={{ marginBottom: "20px" }}>
-  <div className="bg-white rounded-lg flex items-center justify-center" style={{ padding: "8px", width: "fit-content" }}>
-    <Image
-      src="/images/Logo.png"
-      alt="Miragold Tutors"
-      width={80}
-      height={60}
-      className="object-contain w-auto h-[50px]"
-    />
-  </div>
-</Link>
+            <Link href="/" className="inline-block" style={{ marginBottom: "20px" }}>
+              <div className="bg-white rounded-lg flex items-center justify-center" style={{ padding: "8px", width: "fit-content" }}>
+                <Image
+                  src="/images/Logo.png"
+                  alt="Miragold Tutors"
+                  width={80}
+                  height={60}
+                  className="object-contain w-auto h-[50px]"
+                />
+              </div>
+            </Link>
             <div className="flex gap-3" style={{ marginTop: "16px" }}>
               {/* Twitter */}
               <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -59,17 +60,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-sans text-white text-[14px] font-semibold" style={{ marginBottom: "16px" }}>
+            <h4 className="font-sans text-white text-xl font-semibold" style={{ marginBottom: "16px" }}>
               Contact
             </h4>
             <div className="flex flex-col gap-3">
-              <a href="tel:+447890423087" className="font-sans text-white/50 text-[13px] flex items-center gap-2 hover:text-[#F5C842] transition-colors">
+              <a href="tel:+447890423087" className="font-sans text-white/50 text-base flex items-center gap-2 hover:text-[#F5C842] transition-colors">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" strokeOpacity="0.5" strokeWidth="1.5"/>
                 </svg>
                 +447890423087
               </a>
-              <a href="mailto:Miragold1230@gmail.com" className="font-sans text-white/50 text-[13px] flex items-center gap-2 hover:text-[#F5C842] transition-colors">
+              <a href="mailto:Miragold1230@gmail.com" className="font-sans text-white/50 text-base flex items-center gap-2 hover:text-[#F5C842] transition-colors">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeOpacity="0.5" strokeWidth="1.5"/>
                   <path d="M22 6l-10 7L2 6" stroke="white" strokeOpacity="0.5" strokeWidth="1.5"/>
@@ -81,7 +82,7 @@ export default function Footer() {
 
           {/* Useful links */}
           <div>
-            <h4 className="font-sans text-white text-[14px] font-semibold" style={{ marginBottom: "16px" }}>
+            <h4 className="font-sans text-white text-xl font-semibold" style={{ marginBottom: "16px" }}>
               Useful links
             </h4>
             <ul className="flex flex-col gap-3 list-none">
@@ -92,7 +93,7 @@ export default function Footer() {
                 { label: "Our programmes", href: "/#programmes" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="font-sans text-white/50 text-[13px] hover:text-[#F5C842] transition-colors">
+                  <Link href={link.href} className="font-sans text-white/50 text-base hover:text-[#F5C842] transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -100,35 +101,34 @@ export default function Footer() {
             </ul>
           </div>
 
-        
-{/* Newsletter */}
-<div className="w-full md:w-fit">
-  <h4 className="font-sans text-white text-[14px] font-semibold" style={{ marginBottom: "8px" }}>
-    Newsletter
-  </h4>
-  <p className="font-sans text-white/50 text-[12px] leading-[1.6] md:whitespace-nowrap" style={{ marginBottom: "16px" }}>
-    Sign up to our newsletter to receive latest updates
-  </p>
-  <div className="flex flex-col gap-3">
-    <input
-      type="email"
-      placeholder="Your email"
-      className="font-sans text-[13px] text-white bg-white/10 rounded-lg outline-none focus:ring-1 focus:ring-[#F5C842] placeholder-white/30 w-full"
-      style={{ padding: "10px 14px" }}
-    />
-    <button
-      className="font-sans text-[13px] text-white bg-[#F5C842] rounded-full font-medium hover:bg-[#E5B832] transition-colors cursor-pointer w-full"
-      style={{ padding: "10px 14px" }}
-    >
-      Subscribe
-    </button>
-  </div>
-</div>
+          {/* Newsletter */}
+          <div className="w-full md:w-fit">
+            <h4 className="font-sans text-white text-xl font-semibold" style={{ marginBottom: "8px" }}>
+              Newsletter
+            </h4>
+            <p className="font-sans text-white/50 text-base leading-[1.6] md:whitespace-nowrap" style={{ marginBottom: "16px" }}>
+              Sign up to our newsletter to receive latest updates
+            </p>
+            <div className="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="font-sans text-base text-white bg-white/10 rounded-lg outline-none focus:ring-1 focus:ring-[#F5C842] placeholder-white/30 w-full"
+                style={{ padding: "10px 14px" }}
+              />
+              <button
+                className="font-sans text-base text-white bg-[#F5C842] rounded-full font-medium hover:bg-[#E5B832] transition-colors cursor-pointer w-full"
+                style={{ padding: "10px 14px" }}
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Copyright */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "20px", textAlign: "center" }}>
-          <p className="font-sans text-white/30 text-[12px]">
+          <p className="font-sans text-white/30 text-base">
             ©copyright 2026 all right reserved
           </p>
         </div>
