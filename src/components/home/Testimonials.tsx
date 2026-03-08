@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/svg";
@@ -96,6 +96,9 @@ export default function Testimonials() {
   const [featuredAnimating, setFeaturedAnimating] = useState(false);
   const [cardAnimating, setCardAnimating] = useState(false);
 
+  const featuredTouchStart = useRef<number | null>(null);
+  const cardTouchStart = useRef<number | null>(null);
+
   const featured = featuredTestimonials[featuredIndex];
   const currentCards = testimonialPages[cardPage];
 
@@ -103,40 +106,44 @@ export default function Testimonials() {
     if (featuredAnimating) return;
     setFeaturedDir("right");
     setFeaturedAnimating(true);
-    setTimeout(() => {
-      setFeaturedIndex((prev) => (prev + 1) % featuredTestimonials.length);
-      setFeaturedAnimating(false);
-    }, 300);
+    setTimeout(() => { setFeaturedIndex((prev) => (prev + 1) % featuredTestimonials.length); setFeaturedAnimating(false); }, 300);
   };
 
   const prevFeatured = () => {
     if (featuredAnimating) return;
     setFeaturedDir("left");
     setFeaturedAnimating(true);
-    setTimeout(() => {
-      setFeaturedIndex((prev) => (prev - 1 + featuredTestimonials.length) % featuredTestimonials.length);
-      setFeaturedAnimating(false);
-    }, 300);
+    setTimeout(() => { setFeaturedIndex((prev) => (prev - 1 + featuredTestimonials.length) % featuredTestimonials.length); setFeaturedAnimating(false); }, 300);
   };
 
   const nextCards = () => {
     if (cardAnimating) return;
     setCardDir("right");
     setCardAnimating(true);
-    setTimeout(() => {
-      setCardPage((prev) => (prev + 1) % testimonialPages.length);
-      setCardAnimating(false);
-    }, 300);
+    setTimeout(() => { setCardPage((prev) => (prev + 1) % testimonialPages.length); setCardAnimating(false); }, 300);
   };
 
   const prevCards = () => {
     if (cardAnimating) return;
     setCardDir("left");
     setCardAnimating(true);
-    setTimeout(() => {
-      setCardPage((prev) => (prev - 1 + testimonialPages.length) % testimonialPages.length);
-      setCardAnimating(false);
-    }, 300);
+    setTimeout(() => { setCardPage((prev) => (prev - 1 + testimonialPages.length) % testimonialPages.length); setCardAnimating(false); }, 300);
+  };
+
+  const onFeaturedTouchStart = (e: React.TouchEvent) => { featuredTouchStart.current = e.touches[0].clientX; };
+  const onFeaturedTouchEnd = (e: React.TouchEvent) => {
+    if (featuredTouchStart.current === null) return;
+    const diff = featuredTouchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextFeatured() : prevFeatured();
+    featuredTouchStart.current = null;
+  };
+
+  const onCardTouchStart = (e: React.TouchEvent) => { cardTouchStart.current = e.touches[0].clientX; };
+  const onCardTouchEnd = (e: React.TouchEvent) => {
+    if (cardTouchStart.current === null) return;
+    const diff = cardTouchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextCards() : prevCards();
+    cardTouchStart.current = null;
   };
 
   return (
@@ -166,12 +173,17 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Featured testimonial */}
-        <div style={{ marginBottom: "48px" }}>
-          <div className="flex flex-col md:flex-row gap-8 items-stretch overflow-hidden">
+        {/* Featured testimonial — swipeable */}
+        <div
+          style={{ marginBottom: "48px" }}
+          onTouchStart={onFeaturedTouchStart}
+          onTouchEnd={onFeaturedTouchEnd}
+        >
+          <div className="flex flex-col md:flex-row gap-8 items-stretch">
 
             {/* Text side */}
-            <div className="md:w-[40%] flex flex-col justify-between">
+            {/* Text side */}
+<div className="md:w-[40%] flex flex-col justify-start">
               <div
                 className="transition-all duration-500 ease-out"
                 style={{
@@ -181,7 +193,6 @@ export default function Testimonials() {
                     : "translateX(0)",
                 }}
               >
-                {/* Featured body — 16px */}
                 <p
                   className="font-sans"
                   style={{ fontSize: "16px", lineHeight: "24px", letterSpacing: "-0.02em", color: "#505050", marginBottom: "32px", maxWidth: "520px" }}
@@ -190,18 +201,10 @@ export default function Testimonials() {
                 </p>
                 <div>
                   <div style={{ width: "100%", maxWidth: "430px", height: "1px", backgroundColor: "#E0E0E0", marginBottom: "16px" }} />
-                  {/* Author name — 20px */}
-                  <p
-                    className="font-sans font-semibold text-dark"
-                    style={{ fontSize: "20px", lineHeight: "1.2" }}
-                  >
+                  <p className="font-sans font-semibold text-dark" style={{ fontSize: "20px", lineHeight: "1.2" }}>
                     {featured.author}
                   </p>
-                  {/* Role — 16px */}
-                  <p
-                    className="font-sans"
-                    style={{ fontSize: "16px", color: "#505050" }}
-                  >
+                  <p className="font-sans" style={{ fontSize: "16px", color: "#505050" }}>
                     {featured.role}
                   </p>
                 </div>
@@ -245,14 +248,14 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Arrows — mobile only, centered below video */}
+          {/* Arrows — mobile only */}
           <div className="flex md:hidden justify-center gap-3" style={{ marginTop: "20px" }}>
             <ArrowButton onClick={prevFeatured} direction="left" label="Previous" />
             <ArrowButton onClick={nextFeatured} direction="right" label="Next" />
           </div>
         </div>
 
-        {/* Testimonial cards */}
+        {/* Testimonial cards — swipeable */}
         <div
           className="transition-all duration-500 ease-out"
           style={{
@@ -262,6 +265,8 @@ export default function Testimonials() {
               ? `translateX(${cardDir === "right" ? "-40px" : "40px"})`
               : "translateX(0)",
           }}
+          onTouchStart={onCardTouchStart}
+          onTouchEnd={onCardTouchEnd}
         >
           {/* Mobile: one card */}
           <div className="block md:hidden">

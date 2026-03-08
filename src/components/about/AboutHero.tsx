@@ -72,7 +72,7 @@ export default function AboutHero() {
 
         {/* ── Image side ── */}
         <div
-          className="w-full md:flex-shrink-0"
+          className="w-full md:flex-1"
           style={{
             maxWidth: "622px",
             width: "100%",
