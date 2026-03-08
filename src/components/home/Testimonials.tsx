@@ -150,11 +150,14 @@ export default function Testimonials() {
           <div>
             <h2
               className="font-display font-bold text-dark leading-[1.2]"
-              style={{ fontSize: "clamp(22px, 3vw, 32px)", marginBottom: "12px" }}
+              style={{ fontSize: "20px", marginBottom: "12px" }}
             >
               Success Stories
             </h2>
-            <p className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7]">
+            <p
+              className="font-sans"
+              style={{ fontSize: "16px", lineHeight: "24px", letterSpacing: "-0.02em", color: "#505050" }}
+            >
               We measure success not just by scores but by confidence, growth, and independence.
             </p>
           </div>
@@ -178,20 +181,33 @@ export default function Testimonials() {
                     : "translateX(0)",
                 }}
               >
+                {/* Featured body — 16px */}
                 <p
-                  className="font-sans text-[#3A3A4A] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8]"
-                  style={{ marginBottom: "32px", maxWidth: "520px" }}
+                  className="font-sans"
+                  style={{ fontSize: "16px", lineHeight: "24px", letterSpacing: "-0.02em", color: "#505050", marginBottom: "32px", maxWidth: "520px" }}
                 >
                   {featured.body}
                 </p>
                 <div>
                   <div style={{ width: "100%", maxWidth: "430px", height: "1px", backgroundColor: "#E0E0E0", marginBottom: "16px" }} />
-                  <p className="font-sans text-dark text-[14px] sm:text-[15px] font-semibold">{featured.author}</p>
-                  <p className="font-sans text-[#6B6B7B] text-[12px] sm:text-[13px]">{featured.role}</p>
+                  {/* Author name — 20px */}
+                  <p
+                    className="font-sans font-semibold text-dark"
+                    style={{ fontSize: "20px", lineHeight: "1.2" }}
+                  >
+                    {featured.author}
+                  </p>
+                  {/* Role — 16px */}
+                  <p
+                    className="font-sans"
+                    style={{ fontSize: "16px", color: "#505050" }}
+                  >
+                    {featured.role}
+                  </p>
                 </div>
               </div>
 
-              {/* Arrows — desktop only, below text */}
+              {/* Arrows — desktop only */}
               <div className="hidden md:flex gap-3" style={{ marginTop: "24px" }}>
                 <ArrowButton onClick={prevFeatured} direction="left" label="Previous" />
                 <ArrowButton onClick={nextFeatured} direction="right" label="Next" />
@@ -253,18 +269,29 @@ export default function Testimonials() {
               <img src="/images/Yellow.png" alt="" className="absolute inset-0 w-full h-full pointer-events-none" />
               <div className="relative z-10 flex flex-col justify-between" style={{ padding: "24px" }}>
                 <div>
-                  <h3 className="font-sans text-dark text-[15px] font-semibold leading-[1.3]" style={{ marginBottom: "12px" }}>
+                  <h3
+                    className="font-sans text-dark font-semibold leading-[1.3]"
+                    style={{ fontSize: "20px", marginBottom: "12px" }}
+                  >
                     {currentCards[0].title}
                   </h3>
-                  <p className="font-sans text-[#6B6B7B] text-[12px] leading-[1.7]" style={{ marginBottom: "20px" }}>
+                  <p
+                    className="font-sans leading-[1.7]"
+                    style={{ fontSize: "16px", color: "#505050", marginBottom: "20px" }}
+                  >
                     {currentCards[0].body}
                   </p>
                 </div>
                 <div>
-                  <p className="font-sans text-[#6B6B7B] text-[12px] italic leading-[1.6]" style={{ marginBottom: "12px" }}>
+                  <p
+                    className="font-sans italic leading-[1.6]"
+                    style={{ fontSize: "16px", color: "#505050", marginBottom: "12px" }}
+                  >
                     {currentCards[0].quote}
                   </p>
-                  <p className="font-sans text-dark text-[13px] font-semibold">{currentCards[0].author}</p>
+                  <p className="font-sans text-dark font-semibold" style={{ fontSize: "16px" }}>
+                    {currentCards[0].author}
+                  </p>
                 </div>
               </div>
             </div>
@@ -277,18 +304,29 @@ export default function Testimonials() {
                 <img src="/images/Yellow.png" alt="" className="absolute inset-0 w-full h-full pointer-events-none" />
                 <div className="relative z-10 flex flex-col justify-between" style={{ padding: "28px" }}>
                   <div>
-                    <h3 className="font-sans text-dark text-[15px] sm:text-[16px] font-semibold leading-[1.3]" style={{ marginBottom: "12px" }}>
+                    <h3
+                      className="font-sans text-dark font-semibold leading-[1.3]"
+                      style={{ fontSize: "20px", marginBottom: "12px" }}
+                    >
                       {testimonial.title}
                     </h3>
-                    <p className="font-sans text-[#6B6B7B] text-[12px] sm:text-[13px] leading-[1.7]" style={{ marginBottom: "20px" }}>
+                    <p
+                      className="font-sans leading-[1.7]"
+                      style={{ fontSize: "16px", color: "#505050", marginBottom: "20px" }}
+                    >
                       {testimonial.body}
                     </p>
                   </div>
                   <div>
-                    <p className="font-sans text-[#6B6B7B] text-[12px] sm:text-[13px] italic leading-[1.6]" style={{ marginBottom: "12px" }}>
+                    <p
+                      className="font-sans italic leading-[1.6]"
+                      style={{ fontSize: "16px", color: "#505050", marginBottom: "12px" }}
+                    >
                       {testimonial.quote}
                     </p>
-                    <p className="font-sans text-dark text-[13px] sm:text-[14px] font-semibold">{testimonial.author}</p>
+                    <p className="font-sans text-dark font-semibold" style={{ fontSize: "16px" }}>
+                      {testimonial.author}
+                    </p>
                   </div>
                 </div>
               </div>

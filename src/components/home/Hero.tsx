@@ -33,17 +33,23 @@ export default function Hero() {
     textAlign: "center",
   }}
 >
-        <h1 className="font-display text-[28px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold text-dark leading-[1.2]" style={{ marginBottom: "16px" }}>
-          Confident Children.
-          <br />
-          Outstanding Results.
-        </h1>
+        <h1
+  className="font-display font-bold text-dark leading-[1.2]"
+  style={{ fontSize: "clamp(28px, 4.5vw, 48px)", marginBottom: "16px" }}
+>
+  Confident Children.
+  <br />
+  Outstanding Results.
+</h1>
 
-        <p style={{ maxWidth: "620px", marginBottom: "24px" }} className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7]">
-          Structured lessons, small groups, and personalised guidance to help your child excel
-          <br />
-          with confidence.
-        </p>
+      <p
+  style={{ maxWidth: "620px", marginBottom: "24px" }}
+  className="font-sans text-[#6B6B7B] text-[16px] sm:text-[14px] md:text-[15px] leading-[1.7]"
+>
+  Structured lessons, small groups, and personalised guidance to help your child excel{" "}
+  <span className="hidden sm:block">with confidence.</span>
+  <span className="sm:hidden">with confidence.</span>
+</p>
 
         <div className="flex gap-3 flex-wrap justify-center" style={{ marginBottom: "32px" }}>
           <Button label="Book a free call now" href="/contact" variant="primary" />

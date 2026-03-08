@@ -24,27 +24,25 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-  <section id="faqs" style={{ width: "100%", backgroundColor: "white", scrollMarginTop: "80px" }}>
-  <div className="section-padding"
-    style={{
-      maxWidth: "1440px",
-      margin: "0 auto",
-  
-      paddingTop: "60px",
-      paddingBottom: "60px",
-      textAlign: "center",
-    }}
-  >
-    <h2
-      className="font-display font-bold text-dark leading-[1.2]"
-      style={{ fontSize: "32px", marginBottom: "32px" }}
-    >
-      Frequently Asked Questions
-    </h2>
+    <section id="faqs" style={{ width: "100%", backgroundColor: "white", scrollMarginTop: "80px" }}>
+      <div
+        className="section-padding"
+        style={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          paddingTop: "60px",
+          paddingBottom: "60px",
+          textAlign: "center",
+        }}
+      >
+        <h2
+          className="font-display font-bold text-dark leading-[1.2]"
+          style={{ fontSize: "32px", marginBottom: "32px" }}
+        >
+          Frequently Asked Questions
+        </h2>
 
-    <div className="flex flex-col gap-5" style={{ maxWidth: "792px", margin: "0 auto" }}>
-
-       
+        <div className="flex flex-col gap-5" style={{ maxWidth: "792px", margin: "0 auto" }}>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -60,7 +58,11 @@ export default function FAQ() {
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
               >
                 <div className="flex items-center justify-between">
-                  <p className="font-sans text-dark text-[14px] sm:text-[15px] font-medium leading-[1.4]">
+                  {/* Question — 20px */}
+                  <p
+                    className="font-sans text-dark font-medium leading-[1.4]"
+                    style={{ fontSize: "20px" }}
+                  >
                     {faq.question}
                   </p>
                   <div
@@ -90,9 +92,16 @@ export default function FAQ() {
                 </div>
 
                 {isOpen && (
+                  // Answer — 16px
                   <p
-                    className="font-sans text-[#6B6B7B] text-[13px] sm:text-[14px] leading-[1.7]"
-                    style={{ marginTop: "12px" }}
+                    className="font-sans"
+                    style={{
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      letterSpacing: "-0.02em",
+                      color: "#505050",
+                      marginTop: "12px",
+                    }}
                   >
                     {faq.answer}
                   </p>

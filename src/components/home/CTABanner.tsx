@@ -21,16 +21,20 @@ export default function CTABanner() {
         }}
       >
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-[127px]">
-          <div className="flex-1 text-left">
+
+          {/* Text side */}
+          <div className="w-full md:flex-shrink-0 text-left" style={{ maxWidth: "562px" }}>
             <h2
               className="font-display font-bold text-dark leading-[1.2]"
-              style={{ fontSize: "32px", marginBottom: "12px" }}
+              style={{ fontSize: "clamp(24px, 3vw, 32px)", marginBottom: "12px" }}
             >
-              Give Your Child the Confidence to<br className="hidden md:block" /> Succeed
+              Give Your Child the Confidence to
+              <br />
+              Succeed
             </h2>
             <p
               className="font-sans text-[#6B6B7B] leading-[1.7]"
-              style={{ fontSize: "16px", maxWidth: "500px", marginBottom: "20px" }}
+              style={{ fontSize: "16px", marginBottom: "20px" }}
             >
               We combine structure, encouragement, and academic excellence to help every
               child thrive in their entrance exams and beyond.
@@ -40,6 +44,7 @@ export default function CTABanner() {
             </div>
           </div>
 
+          {/* Image side */}
           <div className="flex-1 flex justify-center md:justify-end w-full">
             <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[551px] lg:h-[486px]">
               <Image
@@ -51,6 +56,7 @@ export default function CTABanner() {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>
